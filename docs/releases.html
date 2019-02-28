@@ -20,14 +20,17 @@ redirect_from:
     {% assign sorted_releases = site.releases | sort | reverse  %}
     {% for release in sorted_releases %}
       {% assign url_parts = release.url | split: "/" %}
+      {% assign release_major = release.release_id | split: "." | first | remove_first: "v" %}
 
         {% comment %}
-            Weird as hell, but .size == 3 means there are 2 elements ...
+            Skip creating a link to 'latest'. That release is only found through the SEO canonical links.
+
+            Liquid weirdness: .size == 3 means there are 2 elements ...
         {% endcomment %}
         {% if url_parts.size == 3 and url_parts[2] != "latest" %}
           <li>
             <p>
-              <span class="ver">{{ release.release_id }}</span>
+            <span class="ver">Version {{release_major}} &nbsp;(latest {{release.release_id}})</span>
               <span class="pull-right">
                 <a class="btn btn-primary" href="{{site.baseurl}}/releases/sinon-{{ release.release_id | remove_first: 'v' }}.js">Download</a>
                 <a class="btn btn-default" href="{{site.baseurl}}{{ release.url }}">Docs</a>
