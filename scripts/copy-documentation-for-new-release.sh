@@ -16,15 +16,10 @@ function copy_source_to(){
     local FILE_PATH="${DIR}.md"
 
     if [ -e "$DIR" ]; then
-            echo "$DIR already exists, cannot continue"
-            exit 1
+            echo "Updating docs for version $VERSION"
     fi
 
-    if [ -e "$FILE_PATH" ]
-        then
-            echo "$FILE_PATH already exists, cannot continue"
-            exit 1
-    fi
+    rm -r "docs/_releases/$VERSION" "docs/_releases/$VERSION.md" 2>/dev/null
 
     echo "Copy $SOURCE_PATH to $DIR"
 
@@ -42,8 +37,6 @@ function copy_source_to(){
 }
 
 copy_source_to "$RELEASE_VERSION"
-rm -r "docs/_releases/latest" \
-    "docs/_releases/latest.md" 2>/dev/null
 copy_source_to "latest"
 
 git commit -m "Add release documentation for $RELEASE_VERSION"
