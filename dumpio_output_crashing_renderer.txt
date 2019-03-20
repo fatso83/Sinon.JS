@@ -1,0 +1,15 @@
+node_1  | > sinon@7.2.7 test-headless /home/node/app
+node_1  | > mochify --recursive -R dot --grep WebWorker --invert --plugin [ proxyquire-universal ] "test/**/*-test.js" "--chrome" "/usr/bin/google-chrome-stable" "--allow-chrome-as-root"
+node_1  | 
+node_1  | Fontconfig warning: "/etc/fonts/fonts.conf", line 100: unknown element "blank"
+node_1  | 
+node_1  | DevTools listening on ws://127.0.0.1:38575/devtools/browser/2be878d6-7899-47c4-bfa3-0b240f3a8472
+node_1  | [0320/100336.123457:FATAL:gpu_data_manager_impl_private.cc(892)] The display compositor is frequently crashing. Goodbye.
+node_1  | # chromium:
+node_1  | Protocol error (Runtime.evaluate): Session closed. Most likely the page has been closed.
+node_1  | Error: Exit 1
+node_1  | 
+node_1  | Protocol error (Runtime.callFunctionOn): Session closed. Most likely the page has been closed.
+node_1  | Error: Exit 1
+node_1  | 
+node_1  | npm ERR! code ELIFECYCLE
