@@ -1,7 +1,7 @@
 version: "2"
 services:
   node:
-    image: "node@sha256:af3c419f9939f241c89db419e2e2741d5ae87269464d20cbefaf563561dbfbf0"
+    image: "circleci/node:10"
     user: "root"
     working_dir: /home/node/app
     environment:
