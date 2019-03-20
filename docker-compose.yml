@@ -1,7 +1,7 @@
 version: "2"
 services:
   node:
-    image: "circleci/node:10"
+    image: "circleci/node:10.15.1-browsers"
     user: "root"
     working_dir: /home/node/app
     environment:
